@@ -2,7 +2,7 @@
 # Distributed under the terms of the Modified BSD License.
 FROM docker.io/jupyter/scipy-notebook
 
-LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
+LABEL maintainer="Quytelda Kahja <dev@tamalin.org>"
 
 # Fix: https://github.com/hadolint/hadolint/wiki/DL4006
 # Fix: https://github.com/koalaman/shellcheck/wiki/SC3014
