@@ -24,6 +24,11 @@ ENV JULIA_DEPOT_PATH=/opt/julia \
 
 WORKDIR /tmp
 
+# Update OS packages
+RUN apt-get update && \
+    apt-get install --yes --no-install-recommends && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
 # hadolint ignore=SC2046
 RUN set -x && \
     julia_arch=$(uname -m) && \
