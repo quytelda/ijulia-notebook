@@ -26,7 +26,7 @@ WORKDIR /tmp
 
 # Update OS packages
 RUN apt-get update && \
-    apt-get install --yes --no-install-recommends && \
+    apt-get upgrade --yes && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # hadolint ignore=SC2046
