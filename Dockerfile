@@ -1,6 +1,6 @@
 # Copyright (c) Jupyter Development Team.
 # Distributed under the terms of the Modified BSD License.
-FROM docker.io/jupyter/scipy-notebook
+FROM docker.io/jupyter/minimal-notebook
 
 LABEL maintainer="Quytelda Kahja <dev@tamalin.org>"
 
@@ -27,6 +27,10 @@ WORKDIR /tmp
 # Update OS packages
 RUN apt-get update && \
     apt-get upgrade --yes && \
+    apt-get install --yes --no-install-recommends \
+    # for latex labels
+    cm-super \
+    dvipng && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # hadolint ignore=SC2046
